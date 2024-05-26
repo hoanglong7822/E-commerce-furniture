@@ -17,9 +17,12 @@
             <li><a class="nav-link" href="blog.ejs">Blog</a></li>
             <li><a class="nav-link" href="contact.ejs">Contact us</a></li>
         </ul>
-
         <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-            <li><a class="nav-link"><img id="loginButton" src="images/user.svg"></a></li>
+            <% if (locals.user) { %>
+                <li><a class="nav-link" href="contact.ejs">Xin chào: <%=user%></a></li>
+                <% } else { %>
+                <li><a class="nav-link"><img id="loginButton" src="images/user.svg"></a></li>
+                <% } %>
             <li><a class="nav-link" href="cart.ejs"><img src="images/cart.svg"></a></li>
         </ul>
     </div>

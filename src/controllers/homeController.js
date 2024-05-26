@@ -1,10 +1,20 @@
-const db = require("../models/index.js")
+const db = require("../models/index.js");
+const user = require("../models/user.js");
 // render index
+
 const getHomepage = async function(req,res)
 {
     try {
     const data = await db.Product.findAll();
-    return res.render('index.ejs',{ data });
+    if(req.session.login == true){
+      console.log("In ra màn hình ở trang inde",req.session.user)
+      res.locals.user = req.session.user;
+      return res.render('index.ejs',{ data });
+    }
+    else{
+      console.log("đéo tồn tại")
+      return res.render('index.ejs',{ data });
+    }
     } catch (error) {
     console.log("Lỗi",error);
     }
@@ -12,7 +22,9 @@ const getHomepage = async function(req,res)
 //render shop
 const shop = async function(req,res)
 {
-    res.render('shop.ejs');
+   const user = req.session.user
+   res.locals.user = user
+   res.render("shop.ejs")
 }
  const addToCart = function(req,res)
  {
