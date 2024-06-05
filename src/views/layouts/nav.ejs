@@ -1,0 +1,39 @@
+
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+	<div class="container">
+		<a class="navbar-brand" href="/">Furni<span>.</span></a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarsFurni">
+			<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Home</a>
+				</li>
+				<li><a class="nav-link" href="shop.ejs">Shop</a></li>
+				<li><a class="nav-link" href="about.ejs">About us</a></li>
+				<li><a class="nav-link" href="services.ejs">Services</a></li>
+				<li><a class="nav-link" href="blog.ejs">Blog</a></li>
+				<li><a class="nav-link" href="contact.ejs">Contact us</a></li>			</ul>
+			<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+				<% if (locals.user) { %>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<%=user.user_email%>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+						  <li><a class="dropdown-item" href="#">Profile</a></li>
+						  <li><a class="dropdown-item" href="/auth/logOut">Log out</a></li>
+						  <% if (user.user_role != 'user') { %>
+						  <li><a class="dropdown-item" href="admin/">Admin</a></li>
+						  <% } %>
+						</ul>
+					</li>
+					<% } else { %>
+				<li><a class="nav-link"href="login.ejs"><img id="loginButton" src="images/user.svg"></a></li>
+					<% } %>
+				<li><a class="nav-link" href="cart.ejs"><img src="images/cart.svg"></a></li>
+			</ul>
+		</div>
+	</div>
+</nav>

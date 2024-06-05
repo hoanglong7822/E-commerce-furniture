@@ -1,0 +1,112 @@
+<%- include('./partials/header.ejs') %>
+<link href="../css/shop.css" rel="stylesheet">
+
+	<body>
+
+		<!-- Start Header/Navigation -->
+		<%- include('./layouts/nav.ejs') %>
+		<!-- End Header/Navigation -->
+
+		<!-- Start Hero Section -->
+		<!-- End Hero Section -->
+		<% if (mes.length > 0) { %>
+			<div class="toast toast-custom fade show" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<svg class="bd-placeholder-img rounded me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#007aff"></rect></svg>
+					<strong class="me-auto">Furniture</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body"><%= mes %></div>
+			</div>
+			</div>
+		  <% } %>
+		<div class="untree_co-section product-section before-footer-section" >
+		    <div class="container">
+		      	<div class="row ">
+					<div class="col-sm-3 list " >
+						<ul class="">
+							<li class="" >
+								<a data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-list"></i>Product Categories</a>
+								  <div class="collapse" id="collapseExample">
+									<ul>
+										<li>a</li>
+										<li>a</li>
+										<li>a</li>
+									</ul>
+								  </div>
+							</li>
+							<li class=" " >
+								<a data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-tags"></i>Price</a>
+								  <div class="collapse" id="collapseExample">
+									<ul>
+										<li>a</li>
+										<li>a</li>
+										<li>a</li>
+									</ul>
+								  </div>
+							</li>
+
+							<li class="" >
+								<a data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-droplet"></i>Color</a>
+								  <div class="collapse" id="collapseExample">
+									<ul>
+										<li>a</li>
+										<li>a</li>
+										<li>a</li>
+									</ul>
+								  </div>
+							</li>
+							<li class="" >
+								<a data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-maximize"></i>Size</a>
+								  <div class="collapse" id="collapseExample">
+									<ul>
+										<li>a</li>
+										<li>a</li>
+										<li>a</li>
+									</ul>
+								  </div>
+							</li>
+						  </ul>
+					</div>
+		      		<!-- Start Column 1 -->
+					<div class="col-sm-9">	
+			  
+						<% for(var i=0; i < data.length; i++) { %>
+						<div class=" grid-row col-12 col-md-4 col-lg-3 mb-5">
+							<form method="post" action="addToCart">
+								<input type="hidden" name="page" value="shop">
+								<input type="hidden" name="productId" value="<%= data[i].product_id %>">
+								<input type="hidden" name="productName" value="<%= data[i].product_name %>">
+								<input type="hidden" name="productImage" value="<%= data[i].product_image %>">
+								<input type="hidden" name="productPrice" value="<%= data[i].product_price %>">
+								<a class="product-item " href="test.ejs/<%= data[i].product_id %>" data-id="<%= data[i].product_id %>">
+									<img src="/<%= data[i].product_image %>" class="img-fluid product-thumbnail">
+									<h3 class="product-title"><%= data[i].product_name%> </h3>
+									<strong class="product-price"><%= data[i].product_price %> VND</strong>
+									<span class="icon-cross" style="width: 225px;">
+										<button type="submit">Add to cart</button>
+									</span>
+								</a>
+							</form>
+						</div> 
+						<% } %>
+					</div>
+					<!-- End Column 1 -->
+				</div>
+		    </div>
+		</div>
+
+
+		<!-- Start Footer Section -->
+		<%- include('./partials/footer.ejs') %>
+		<!-- End Footer Section -->	
+
+		<script src="https://kit.fontawesome.com/7761120978.js" crossorigin="anonymous"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/tiny-slider.js"></script>
+		<script src="js/custom.js"></script>
+		<script src="js/login.js"></script>
+		<script src="js/register.js"></script>
+	</body>
+
+</html>

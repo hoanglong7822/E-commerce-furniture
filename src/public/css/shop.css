@@ -1,0 +1,48 @@
+.grid-row{
+    margin-left: 50px;
+    display: inline-block;
+}
+.list ul {
+    /* Remove default list item markers */
+    list-style: none;
+    /* Add some padding for better spacing */
+    padding: 10px;
+    /* Add a border to visually define the list */
+    border: 1px solid #ddd;
+  }
+  
+  /* Target the list items (li) */
+ .list li {
+    /* Add some margin for spacing between items */
+    margin-bottom: 5px;
+  }
+  
+  /* Target the list item anchors (a) */
+ .list li a {
+    /* Remove underline from links by default */
+    text-decoration: none;
+    /* Add some color to the links */
+    color: #333;
+    /* Add some padding for better spacing */
+    padding: 5px 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: #554f4f;
+  }
+  
+  /* Target the collapse functionality indicator (i) */
+ .list li a i {
+    /* Add some margin to the right of the icon */
+    margin-right: 10px;
+  }
+  
+  /* Target the hover state of the list item anchors (a:hover) */
+ .list li a:hover {
+    /* Change the background color slightly on hover */
+    background-color: #eee;
+  }
+  .product-shop{
+    width: 250px;
+  }
+  

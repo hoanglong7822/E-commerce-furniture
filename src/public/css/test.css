@@ -1,0 +1,19 @@
+h1{
+   color: aqua;
+}
+.container {
+    position: relative; /* Thiết lập phần tử cha là relative */
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+  }
+  
+  .absolute {
+    position: absolute; /* Thiết lập phần tử con là absolute */
+    top: 0px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+  }
+  

@@ -1,0 +1,7 @@
+.toast-custom {
+    position: fixed; /* Vị trí cố định */
+    top: 635px; /* Vị trí 20px từ trên cùng */
+    right: 10px; /* Vị trí 20px từ bên phải */
+    /* Hoặc bạn có thể sử dụng left: 20px; để đặt toast ở bên trái */
+    z-index: 9999; /* Đảm bảo toast hiển thị phía trên tất cả các phần tử khác */
+  }

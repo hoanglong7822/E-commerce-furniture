@@ -12,7 +12,8 @@ const authController = {
               })
               
               User.save()
-             res.json(User)
+             res.redirect('/')
+    
         } catch (error) {
             res.status(500).json(error)
         }},
@@ -20,7 +21,8 @@ const authController = {
     loginUser: async(req,res)=>{
         try {
             if(!req.body.email || !req.body.passWord){
-                return   res.status(404).json("Wrong username or password")
+                req.flash('err', 'Tài khoản hoặc mật khẩu không tồn tại');
+                return res.redirect('/login.ejs')
             }
             const user = await db.User.findOne({
                 where: {
@@ -28,22 +30,30 @@ const authController = {
                 }
               });
             if(!user){
-                return res.status(404).json("Wrong username")
+                req.flash('err', 'Tài khoản không tồn tại');
+                return res.redirect('/login.ejs')
             }
             const validPassword = await bcrypt.compare(req.body.passWord,user.user_password)
             if(!validPassword){
-                return res.status(404).json("Wrong password")
+                req.flash('err', 'Sai mật khẩu');
+                return res.redirect('/login.ejs')
             }
             let token = jwt.sign({id:user.user_id,admin:user.user_role},"secret" ,{expiresIn: '2000s'});
-            //  res.status(200).json({user,token})
-             req.session.user = user.user_email;
-             console.log(req.session.user)
+             req.session.user = user;
              req.session.login = true;
-             console.log("k tồn tại gì đó")
-            res.redirect('/')
+             req.flash('success', 'Đăng nhập thành công!');
+             console.log('Đăng nhập thành công')
+             res.redirect('/')
         } catch (error) {
             res.status(404).json({mes: error})
         }
+    },
+    logOut: async(req,res) => {
+        req.session.destroy();
+        res.redirect('/'); 
+    },
+    loginPage: async(req,res) => {
+        res.render('login.ejs');
     }
 }
 module.exports = authController
