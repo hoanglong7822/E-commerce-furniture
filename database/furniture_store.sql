@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2024 at 06:47 PM
+-- Generation Time: Jun 24, 2024 at 03:25 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -160,11 +160,14 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `category_id`, `product_name`, `product_description`, `product_price`, `product_quantity`, `product_image`, `createdAt`, `updatedAt`) VALUES
-(1, 1, 'Bàn', NULL, 987000, 999, 'images/product-2.png', '2024-05-20 12:36:43', '2024-05-20 12:36:43'),
-(2, 1, 'Ghế', NULL, 789000, 99, 'images/product-3.png', '2024-05-20 12:36:43', '2024-05-20 12:36:43'),
-(3, 1, 'Tủ', NULL, 879000, 9, 'images/product-1.png', '2024-05-20 12:37:23', '2024-05-20 12:37:23'),
-(10, NULL, 'Nội thất 1', NULL, NULL, NULL, 'images/product-4.png', '2024-06-02 16:31:12', '2024-06-02 16:31:12'),
-(11, NULL, 'Nội thất 2', NULL, NULL, NULL, 'images/product-5.png', '2024-06-02 16:31:12', '2024-06-02 16:31:12');
+(1, 1, 'Ghế Viva', NULL, 987000, 999, 'images/product-2.png', '2024-05-20 12:36:43', '2024-05-20 12:36:43'),
+(2, 1, 'Ghế Hàn Quốc BIANCA', NULL, 789000, 99, 'images/product-3.png', '2024-05-20 12:36:43', '2024-05-20 12:36:43'),
+(3, 1, 'Ghế LENY', NULL, 879000, 9, 'images/product-1.png', '2024-05-20 12:37:23', '2024-05-20 12:37:23'),
+(10, NULL, 'Nội thất 1', NULL, NULL, NULL, 'images/DSC4351.png', '2024-06-02 16:31:12', '2024-06-02 16:31:12'),
+(11, NULL, 'Nội thất 2', NULL, NULL, NULL, 'images/product-5.png', '2024-06-02 16:31:12', '2024-06-02 16:31:12'),
+(16, NULL, 'GIƯỜNG HÀN QUỐC RINA', 'GIƯỜNG HÀN QUỐC RINA\n\nGiường RINA có nhiều kích thước:\n\nD2400 x R1300 x C1100 mm (Nệm 1m2) giá: 13.750.000đ giảm còn 11.000.000đ\n\nD2400 x R1700 x C1100 mm (Nệm 1m6) giá: 16.250.000đ giảm còn 13.000.000đ\n\nD2400 x R1900 x C1100 mm (Nệm 1m8) giá: 17.', 13000000, 13, 'images/avar.png', '2024-06-23 10:56:26', '2024-06-23 10:56:26'),
+(17, NULL, 'Giường Hàn Quốc LOUIS', NULL, 15000000, NULL, 'images/giuong1.png', '2024-06-23 10:59:57', '2024-06-23 10:59:57'),
+(18, NULL, '\r\nGiường Hàn Quốc ELEGAN', NULL, 17000000, NULL, 'images/giuong2.png', '2024-06-23 11:00:06', '2024-06-23 11:00:06');
 
 -- --------------------------------------------------------
 
@@ -271,7 +274,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
